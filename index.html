@@ -10,69 +10,63 @@
         
         body { font-family: 'Nunito', sans-serif; background: #e8f5e9; padding: 0; margin: 0; min-height: 100vh; }
         
-        /* LOGIN */
+        /* LOGIN ESTILO PRINT 2 */
         #telaLogin {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            height: 100vh; width: 100%; position: fixed; top: 0; left: 0; background: #e8f5e9; z-index: 1000;
+            height: 100vh; width: 100%; position: fixed; top: 0; left: 0; background: #e8f5e9; z-index: 2000;
         }
         .login-caixa {
             background: #ffffff; padding: 40px 30px; border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 350px; text-align: center;
         }
         .login-caixa h1 { color: #2e7d32; margin-bottom: 20px; font-weight: 900; }
-        .campo-senha-container { position: relative; width: 100%; }
-        .toggle-password { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 20px; }
+        
+        .input-com-icone {
+            display: flex; align-items: center; width: 100%;
+            border: 2px solid #ddd; border-radius: 8px; background-color: #fafafa;
+            box-sizing: border-box; margin-bottom: 20px;
+        }
+        .input-com-icone:focus-within { border-color: #8bc34a; background-color: #fff; }
+        .input-com-icone span { padding: 0 12px; font-size: 18px; color: #8bc34a; }
+        .input-com-icone input {
+            flex: 1; border: none; background: transparent; padding: 14px 5px;
+            font-size: 16px; font-family: 'Nunito'; outline: none;
+        }
 
-        /* APP */
-        .app-header { max-width: 500px; margin: 0 auto; background: #2e7d32; color: white; text-align: center; padding: 15px; font-size: 20px; font-weight: 900; }
-        .container { max-width: 500px; margin: 0 auto; background: #ffffff; min-height: 100vh; padding-bottom: 50px; }
+        /* CABEÇALHO */
+        .app-header { background: #2e7d32; color: white; text-align: center; padding: 15px; font-size: 20px; font-weight: 900; }
+        .container { max-width: 500px; margin: 0 auto; background: #ffffff; min-height: 100vh; }
+        
+        /* ABAS */
         .tabs { display: flex; background: #333; position: sticky; top: 0; z-index: 100; }
         .tab-btn { flex: 1; padding: 15px; color: white; border: none; background: none; font-weight: 700; cursor: pointer; }
         .tab-btn.active { background: #8bc34a; color: #1b5e20; }
         .tab-content { display: none; padding: 20px; }
         .tab-content.active { display: block; }
         
+        /* FORMULÁRIO */
         label { font-weight: 700; display: block; margin-top: 15px; color: #444; }
-        input, select { width: 100%; padding: 12px; margin-top: 5px; border: 2px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; font-family: 'Nunito'; background: #fafafa; }
-        
-        .btn-acao { width: 100%; padding: 16px; background: #8bc34a; color: #1b5e20; border: none; border-radius: 8px; font-size: 18px; font-weight: 900; cursor: pointer; margin-top: 20px; }
-        .btn-secundario { width: 100%; padding: 10px; background: none; border: 2px dashed #8bc34a; color: #2e7d32; border-radius: 8px; margin-top: 10px; font-weight: 700; cursor: pointer; }
+        input, select { width: 100%; padding: 12px; margin-top: 5px; border: 2px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; font-family: 'Nunito'; }
 
-        /* BUSCA E AUTOCOMPLETE MELHORADO */
+        /* AUTOCOMPLETE */
         .autocomplete-container { position: relative; width: 100%; }
         .input-wrapper { position: relative; }
-        .input-wrapper::after {
-            content: '▼'; position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
-            font-size: 12px; color: #8bc34a; pointer-events: none;
-        }
+        .input-wrapper::after { content: '▼'; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 12px; color: #8bc34a; pointer-events: none; }
+        .autocomplete-list { position: absolute; width: 100%; background: white; border: 2px solid #8bc34a; border-top: none; border-radius: 0 0 8px 8px; z-index: 1000; max-height: 250px; overflow-y: auto; list-style: none; padding: 0; margin: 0; display: none; box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .autocomplete-list li { padding: 14px; border-bottom: 1px solid #eee; cursor: pointer; font-weight: 700; color: #333; }
 
-        .autocomplete-list { 
-            position: absolute; width: 100%; background: white; 
-            border: 2px solid #8bc34a; border-top: none; 
-            border-radius: 0 0 8px 8px; z-index: 1000; 
-            max-height: 250px; overflow-y: auto; 
-            list-style: none; padding: 0; margin: 0; 
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            display: none;
-        }
-        .autocomplete-list li { 
-            padding: 14px; border-bottom: 1px solid #f0f0f0; 
-            cursor: pointer; font-weight: 700; color: #333;
-        }
-        .autocomplete-list li:active { background: #f1f8e9; }
+        .btn-acao { width: 100%; padding: 16px; background: #8bc34a; color: #1b5e20; border: none; border-radius: 8px; font-size: 18px; font-weight: 900; cursor: pointer; margin-top: 20px; }
+        .btn-secundario { width: 100%; padding: 10px; background: none; border: 2px dashed #8bc34a; color: #2e7d32; border-radius: 8px; margin-top: 10px; font-weight: 700; cursor: pointer; }
 
         /* CARRINHO */
         .painel-total { background: #e8f5e9; padding: 15px; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #8bc34a; position: sticky; top: 50px; z-index: 90; }
         .item-lista { padding: 15px; border: 1px solid #eee; border-left: 6px solid #2196f3; margin-bottom: 12px; border-radius: 10px; }
-        .item-lista.comprado { border-left-color: #8bc34a; background: #f9fff9; }
-        
         .item-cabecalho { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 15px; }
-        .item-nome { font-size: 17px; font-weight: 900; flex: 1; word-break: break-word; line-height: 1.3; }
-        .item-controles-topo { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .item-nome { font-size: 17px; font-weight: 900; flex: 1; word-break: break-word; }
         .item-qtd { background: #e0e0e0; padding: 6px 10px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; }
         .btn-apagar { background: #ff5252; color: white; border: none; width: 32px; height: 32px; border-radius: 6px; font-weight: 900; }
 
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 2000; }
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 3000; }
         .modal-content { background: white; padding: 25px; border-radius: 12px; width: 90%; max-width: 400px; }
     </style>
 </head>
@@ -80,13 +74,14 @@
 
 <div id="telaLogin">
     <div class="login-caixa">
-        <h1>🛒 Acesso</h1>
-        <div class="campo-senha-container">
-            <input type="password" id="senhaApp" placeholder="Senha da aba config..." onkeypress="if(event.key==='Enter') entrarApp()">
-            <span class="toggle-password" onclick="toggleSenha()">👁️</span>
+        <h1>🔒 Acesso</h1>
+        <div class="input-com-icone">
+            <span>🛒</span>
+            <input type="password" id="senhaApp" placeholder="Senha do App..." onkeypress="if(event.key==='Enter') entrarApp()">
+            <span style="cursor:pointer" onclick="toggleSenha()">👁️</span>
         </div>
         <button class="btn-acao" id="btnLogin" onclick="entrarApp()">Entrar</button>
-        <div id="msgLogin" style="margin-top:10px; font-weight:bold"></div>
+        <div id="msgLogin" style="margin-top:15px; font-weight:bold"></div>
     </div>
 </div>
 
@@ -120,24 +115,22 @@
             <label>Produto:</label>
             <div class="autocomplete-container">
                 <div class="input-wrapper">
-                    <input type="text" id="produto" placeholder="Toque para ver a lista..." 
-                           oninput="filtrar()" onfocus="filtrar()" onclick="filtrar()" autocomplete="off">
+                    <input type="text" id="produto" placeholder="Toque para ver a lista..." onfocus="filtrar()" onclick="filtrar()" oninput="filtrar()" autocomplete="off">
                 </div>
                 <ul id="listaSugerida" class="autocomplete-list"></ul>
             </div>
 
             <label>Qtd ou Peso:</label>
             <div style="display:flex; gap:10px">
-                <input type="number" step="0.001" id="qtd" style="flex: 2;">
-                <select id="uni" style="flex: 1;">
+                <input type="number" step="0.001" id="qtd" style="flex:2">
+                <select id="uni" style="flex:1">
                     <option value="Un">Un</option>
                     <option value="Peso">Kg</option>
                     <option value="L">Litro</option>
                 </select>
             </div>
-            
             <button class="btn-acao" onclick="add()">Salvar na Lista</button>
-            <button class="btn-secundario" onclick="abrirModalCadastro()">➕ Cadastrar Produto Novo</button>
+            <button class="btn-secundario" onclick="document.getElementById('mNovo').style.display='flex'">➕ Novo Produto na Base</button>
             <div id="msgAdd" style="text-align:center; margin-top:10px; font-weight:bold"></div>
         </div>
 
@@ -145,26 +138,25 @@
             <div class="painel-total"><h2 id="vTotal" style="margin:0; color:#2e7d32">R$ 0,00</h2></div>
             <input type="date" id="dataFiltro" onchange="listar()">
             <div id="listaResult" style="margin-top:20px"></div>
+            <button class="btn-secundario" style="margin-top:40px; border-color:#ccc; color:#888" onclick="sairApp()">Sair / Trocar Senha</button>
         </div>
     </div>
 </div>
 
 <div id="mNovo" class="modal">
     <div class="modal-content">
-        <h2 style="color:#2e7d32; margin-top:0">✨ Novo Produto</h2>
-        <label>Nome + Emoji:</label>
-        <input type="text" id="nNome" placeholder="Ex: Uva 🍇">
-        <button class="btn-acao" onclick="cadastrarBase()">Salvar na Base</button>
-        <button class="btn-secundario" onclick="fecharModalCadastro()">Fechar</button>
+        <h3>✨ Novo na Base</h3>
+        <input type="text" id="nNome" placeholder="Ex: Melancia 🍉">
+        <button class="btn-acao" onclick="cadastrarBase()">Salvar</button>
+        <button class="btn-secundario" onclick="document.getElementById('mNovo').style.display='none'">Fechar</button>
     </div>
 </div>
 
 <div id="modalEditarQtd" class="modal">
     <div class="modal-content">
-        <h2 style="color:#2e7d32; margin-top:0">⚖️ Ajustar</h2>
-        <p id="txtProdutoQtd" style="font-weight:bold"></p>
+        <h3>⚖️ Ajustar Qtd</h3>
+        <p id="txtProdutoQtd" style="font-weight:bold; color:#2e7d32"></p>
         <input type="number" step="0.001" id="editQtdNumero">
-        <input type="hidden" id="editQtdId">
         <button class="btn-acao" onclick="salvarNovaQtd()">OK</button>
     </div>
 </div>
@@ -172,6 +164,7 @@
 <script>
     const URL = 'https://script.google.com/macros/s/AKfycbzL74zO2rnX1jyXnxEk9YaYBrghb7fycDwQ9tygL-ad-QAdXJyh0nV47ONwvMl2skU5ZA/exec';
     let base = [];
+    let idEditando = "";
 
     function toggleSenha() {
         const i = document.getElementById("senhaApp");
@@ -185,30 +178,28 @@
         fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "login", senha: s }) })
         .then(r => r.json()).then(d => {
             if(d.status === "sucesso") {
-                localStorage.setItem("mercado_logado", "sim");
-                inicio();
+                localStorage.setItem("mercado_v3_logado", "sim");
+                liberarApp();
             } else {
                 btn.innerText = "Entrar";
+                document.getElementById("msgLogin").style.color = "red";
                 document.getElementById("msgLogin").innerText = "❌ Senha Incorreta";
             }
         });
     }
 
-    function inicio() {
+    function sairApp() { localStorage.removeItem("mercado_v3_logado"); location.reload(); }
+
+    function liberarApp() {
         document.getElementById("telaLogin").style.display = "none";
         document.getElementById("appPrincipal").style.display = "block";
         const hoje = new Date().toISOString().split('T')[0];
         document.getElementById("dataCompra").value = hoje;
         document.getElementById("dataFiltro").value = hoje;
-        carregarBaseDados();
+        fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "carregarBase" }) }).then(r => r.json()).then(d => { base = d; });
     }
 
-    function carregarBaseDados() {
-        fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "carregarBase" }) })
-        .then(r => r.json()).then(d => { base = d; });
-    }
-
-    if(localStorage.getItem("mercado_logado") === "sim") inicio();
+    window.onload = () => { if(localStorage.getItem("mercado_v3_logado") === "sim") liberarApp(); };
 
     function mudarAba(id, b) {
         document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
@@ -218,62 +209,30 @@
         if(id === 'listTab') listar();
     }
 
-    function limparBusca() {
-        document.getElementById('produto').value = '';
-        document.getElementById("listaSugerida").style.display = "none";
-    }
+    function limparBusca() { document.getElementById('produto').value = ''; document.getElementById("listaSugerida").style.display = "none"; }
 
-    // --- FILTRO COM OPÇÃO DE ROLAR ---
     function filtrar() {
-        const catSelecionada = document.getElementById("categoria").value;
-        const textoBusca = document.getElementById("produto").value.toLowerCase().trim();
+        const cat = document.getElementById("categoria").value;
+        const txt = document.getElementById("produto").value.toLowerCase().trim();
         const ul = document.getElementById("listaSugerida");
-        
         ul.innerHTML = "";
-        if(!catSelecionada) { 
-            ul.style.display = "none"; 
-            if(document.activeElement.id === "produto") alert("Selecione uma Categoria primeiro!");
-            return; 
-        }
-
-        // Se o texto for vazio, ele traz todos os itens da categoria para você rolar
-        const resultados = base.filter(item => {
-            const catItem = String(item[0]).trim();
-            const nomeItem = String(item[1]).toLowerCase();
-            return catItem === catSelecionada && nomeItem.includes(textoBusca);
-        });
-
-        if(resultados.length > 0) {
+        if(!cat) { ul.style.display = "none"; return; }
+        const resultados = base.filter(i => String(i[0]).includes(cat) && String(i[1]).toLowerCase().includes(txt));
+        if(resultados.length) {
             ul.style.display = "block";
             resultados.forEach(item => {
                 let li = document.createElement("li");
                 li.innerText = item[1];
-                li.onmousedown = (e) => {
-                    e.preventDefault();
-                    selecionarProduto(item[1]);
-                };
+                li.onmousedown = (e) => { e.preventDefault(); document.getElementById("produto").value = item[1]; ul.style.display = "none"; };
                 ul.appendChild(li);
             });
-        } else {
-            ul.style.display = "none";
-        }
+        } else { ul.style.display = "none"; }
     }
-
-    function selecionarProduto(nome) {
-        document.getElementById("produto").value = nome;
-        document.getElementById("listaSugerida").style.display = "none";
-    }
-
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".autocomplete-container")) {
-            document.getElementById("listaSugerida").style.display = "none";
-        }
-    });
 
     function add() {
         const p = document.getElementById("produto").value;
         const q = document.getElementById("qtd").value;
-        if (!p || !q) { alert("Escolha o produto e a quantidade!"); return; }
+        if (!p || !q) { alert("Preencha Produto e Qtd!"); return; }
         const dados = { acao: "adicionar", data: document.getElementById("dataCompra").value, categoria: document.getElementById("categoria").value, produto: p, quantidade: q + " " + document.getElementById("uni").value };
         fetch(URL, { method: 'POST', body: JSON.stringify(dados) }).then(() => {
             document.getElementById("msgAdd").innerText = "✅ Salvo!";
@@ -293,7 +252,8 @@
                 let q = parseFloat(String(i.quantidade).replace(',','.')) || 1;
                 total += (p * q);
                 let div = document.createElement("div");
-                div.className = "item-lista " + (p > 0 ? "comprado" : "");
+                div.className = "item-lista";
+                if(p > 0) div.style.borderLeftColor = "#8bc34a";
                 div.innerHTML = `
                     <div class="item-cabecalho">
                         <span class="item-nome">${i.produto}</span>
@@ -303,9 +263,9 @@
                         </div>
                     </div>
                     <div style="display:flex; gap:8px">
-                        <input type="number" id="p-${i.id}" step="0.01" placeholder="R$ Preço" value="${p||''}" style="width:35%">
+                        <input type="number" id="p-${i.id}" step="0.01" placeholder="R$" value="${p||''}" style="width:35%">
                         <input type="text" id="m-${i.id}" placeholder="Mercado" value="${i.mercado||''}" style="width:45%">
-                        <button onclick="salvar('${i.id}')" style="width:20%; background:#8bc34a; border:none; border-radius:8px">✓</button>
+                        <button onclick="salvar('${i.id}')" style="width:20%; background:#8bc34a; border:none; border-radius:8px; color:white; font-weight:bold">✓</button>
                     </div>
                 `;
                 res.appendChild(div);
@@ -320,27 +280,31 @@
         fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "atualizar", id: id, preco: p, mercado: m }) }).then(() => listar());
     }
 
-    function excluir(id) { if(confirm("Excluir item?")) fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "excluir", id: id }) }).then(() => listar()); }
+    function excluir(id) { if(confirm("Apagar item?")) fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "excluir", id: id }) }).then(() => listar()); }
 
-    function abrirModalCadastro() { document.getElementById("mNovo").style.display = "flex"; }
-    function fecharModalCadastro() { document.getElementById("mNovo").style.display = "none"; }
+    function abrirModalQtd(id, prod, qtd) {
+        idEditando = id;
+        document.getElementById("txtProdutoQtd").innerText = prod;
+        document.getElementById("editQtdNumero").value = parseFloat(qtd) || 0;
+        document.getElementById("modalEditarQtd").style.display = "flex";
+    }
+
+    function salvarNovaQtd() {
+        const n = document.getElementById("editQtdNumero").value;
+        fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "atualizarQtd", id: idEditando, quantidade: n + " Peso" }) }).then(() => {
+            document.getElementById("modalEditarQtd").style.display = "none";
+            listar();
+        });
+    }
+
     function cadastrarBase() {
         const c = document.getElementById("categoria").value;
         const n = document.getElementById("nNome").value;
-        fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "cadastrarProdutoBase", categoria: c, produto: n }) })
-        .then(() => { fecharModalCadastro(); carregarBaseDados(); });
-    }
-
-    function abrirModalQtd(id, prod, qtd) {
-        document.getElementById("editQtdId").value = id;
-        document.getElementById("txtProdutoQtd").innerText = prod;
-        document.getElementById("modalEditarQtd").style.display = "flex";
-    }
-    function fecharModalQtd() { document.getElementById("modalEditarQtd").style.display = "none"; }
-    function salvarNovaQtd() {
-        const id = document.getElementById("editQtdId").value;
-        const n = document.getElementById("editQtdNumero").value;
-        fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "atualizarQtd", id: id, quantidade: n + " Peso" }) }).then(() => { fecharModalQtd(); listar(); });
+        if(!c || !n) return alert("Escolha categoria e nome!");
+        fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "cadastrarProdutoBase", categoria: c, produto: n }) }).then(() => {
+            document.getElementById("mNovo").style.display = "none";
+            fetch(URL, { method: 'POST', body: JSON.stringify({ acao: "carregarBase" }) }).then(r => r.json()).then(d => { base = d; });
+        });
     }
 </script>
 </body>
